@@ -122,6 +122,15 @@ Instead of overwhelming users with reminders, SalahGuard encourages mindful wors
 | IDE | Android Studio |
 
 ---
+
+# RoadMap
+
+<p align="center">
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/f2484118-1b11-437b-8022-c5fd6ca8e65e" />
+</p>
+
+---
+
 # 📱 Screenshots
 
 <p align="center">
@@ -135,6 +144,13 @@ Instead of overwhelming users with reminders, SalahGuard encourages mindful wors
    <img width="220"  alt="dhikr" src="https://github.com/user-attachments/assets/04b3ae82-306b-4388-b047-672b5cfab6b7" />
 </p>
 
+---
+
+# 🎥 Demo
+
+https://github.com/user-attachments/assets/03e8deec-67e7-487a-a325-c9434e93e1e5
+
+---
 
 # 🏗 Architecture
 
