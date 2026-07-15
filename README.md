@@ -1,78 +1,264 @@
-# SalahGuard — Project Skeleton (Step 1: Architecture)
+<div align="center">
 
-This is a working Android Studio project skeleton for SalahGuard, built exactly
-to the tech stack and philosophy in the vision document: Kotlin, Jetpack
-Compose, Material 3, MVVM, Clean Architecture, Repository pattern, Hilt, Room,
-Coroutines/Flow, Navigation Compose.
+# 🕌 SalahGuard
 
-## How to open it
+<p align="center">
+  <img src="YOUR_LOGO_LINK" width="180" alt="SalahGuard Logo"/>
+</p>
 
-1. Install **Android Studio** (Koala or newer).
-2. `File > Open` and select this `SalahGuard/` folder.
-3. Let Gradle sync (it will download dependencies the first time — needs internet).
-4. Run on an emulator or device (min SDK 26 / Android 8.0+).
+### *Hope over guilt. Consistency through compassion.*
 
-You should see: Splash screen (1.2s) → Home screen showing "Peace be with you."
-That confirms the full chain works end to end:
-`MainActivity → NavHost → HomeScreen → HomeViewModel (Hilt) → GetTodayPrayersUseCase → PrayerRepository → Room`
+A modern Android application designed to help Muslims stay consistent with prayer through mindful technology, beautiful design, and gentle encouragement.
 
-## Folder structure (Clean Architecture, 3 layers)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?style=for-the-badge&logo=kotlin)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-blue?style=for-the-badge)
+
+</div>
+
+---
+
+# 🌙 About SalahGuard
+
+SalahGuard is more than a prayer application.
+
+It is a **digital spiritual companion** designed to help Muslims build a peaceful and consistent relationship with Salah through compassion rather than guilt.
+
+Instead of overwhelming users with reminders, SalahGuard encourages mindful worship using beautiful design, reflection, learning, and progress tracking.
+
+> **Technology should help us reconnect with our faith — not distract us from it.**
+
+---
+
+# ✨ Features
+
+## 🏠 Home Dashboard
+- Live prayer countdown
+- Current & upcoming prayer overview
+- Dynamic backgrounds based on prayer time
+- Beautiful greeting experience
+
+---
+
+## 🕌 Prayer Experience
+- Prayer details
+- Prayer completion tracking
+- Calm prayer interface
+- Gentle reminders
+
+---
+
+## 🔔 Smart Notifications
+- Prayer reminders
+- Personalized notifications
+- Calm and non-intrusive experience
+
+---
+
+## ⏰ Smart Prayer Alarm
+- Dedicated Fajr alarm
+- Prayer alarm scheduling
+- Peaceful wake-up experience
+
+---
+
+## ✍ Reflection Journal
+- Daily reflections
+- Gratitude journaling
+- Personal spiritual growth
+
+---
+
+## 📈 Journey
+- Prayer streaks
+- Monthly consistency
+- Prayer calendar
+- Progress analytics
+
+---
+
+## 📖 Learn
+- Quran reading
+- Arabic text
+- English translation
+- Audio recitation
+
+---
+
+## 🧭 Qibla Direction
+- Accurate compass
+- Elegant interface
+
+---
+
+## 🕌 Mosque Finder
+- Locate nearby mosques
+- Easy navigation
+
+---
+
+## 📿 Digital Tasbih
+- Beautiful digital Tasbih
+- Continue Dhikr after prayer
+
+---
+
+
+# 🛠 Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| Language | Kotlin |
+| UI | Jetpack Compose |
+| Design | Material Design 3 |
+| Architecture | Clean Architecture |
+| Pattern | MVVM |
+| Dependency Injection | Hilt |
+| Local Database | Room |
+| Asynchronous | Coroutines + Flow |
+| Navigation | Navigation Compose |
+| IDE | Android Studio |
+
+---
+
+# 🏗 Architecture
+
+SalahGuard follows **Clean Architecture** with **MVVM** and the **Repository Pattern**.
 
 ```
-data/            <- HOW: Room entities, DAOs, repository implementations
-  local/
-    entity/      PrayerEntity (Room table)
-    dao/         PrayerDao (queries)
-  repository/    PrayerRepositoryImpl (maps entities <-> domain models)
-
-domain/          <- WHAT: pure Kotlin, zero Android/Room imports
-  model/         Prayer, PrayerName, PrayerStatus
-  repository/    PrayerRepository interface (dependency inversion point)
-  usecase/       GetTodayPrayersUseCase (one class per business action)
-
-presentation/    <- UI: Compose screens + ViewModels (MVVM)
-  theme/         Color.kt, Type.kt, Theme.kt — your exact palette from the doc
-  navigation/    SalahGuardDestination (routes), SalahGuardNavHost (graph)
-  screens/
-    splash/      SplashScreen
-    home/        HomeScreen, HomeViewModel, HomeUiState
-  components/    (empty — reusable buttons/cards go here in Step 2)
-
-di/              Hilt modules: DatabaseModule, RepositoryModule
+Presentation Layer
+        │
+        ▼
+Domain Layer
+        ▲
+        │
+Data Layer
 ```
 
-**The dependency rule:** `presentation` depends on `domain`, `data` depends on
-`domain`, but `domain` depends on nothing. This is why `domain/model/Prayer.kt`
-has no Room annotations — only `data/local/entity/PrayerEntity.kt` does, and
-`PrayerRepositoryImpl` translates between them. This means you could delete
-Room entirely and swap in a different database without touching a single
-ViewModel or Composable.
+The **Domain Layer** contains pure Kotlin business logic and has **zero Android dependencies**, making the application scalable, maintainable, and easy to test.
 
-## Already implemented (so it's not just empty folders)
+---
 
-- Full Hilt DI graph (App → Database → DAO → Repository → UseCase → ViewModel)
-- Room database with a `prayers` table
-- One real feature: fetching today's prayers as a `Flow`, ready for `HomeScreen`
-  to collect once you wire the UI to actually display them
-- Your exact color palette (Warm Ivory, Pearl White, Soft Sand, Stone, Deep
-  Emerald, Minimal Gold, Midnight Blue) plus the 5 time-of-day tint colors
-  from Section 17, ready to use
-- Navigation graph with placeholders for Onboarding, Prayer, Reflection,
-  Quran, Settings — add one `composable(...)` block per screen as you build it
+# 📂 Project Structure
 
-## Deliberate placeholders (next steps, per the doc's build order)
+```
+SalahGuard
+│
+├── data/
+│   ├── local/
+│   │   ├── dao/
+│   │   ├── entity/
+│   │
+│   └── repository/
+│
+├── domain/
+│   ├── model/
+│   ├── repository/
+│   └── usecase/
+│
+├── presentation/
+│   ├── components/
+│   ├── navigation/
+│   ├── screens/
+│   ├── theme/
+│   └── viewmodel/
+│
+├── di/
+│
+└── app/
+```
 
-1. **Design System** — build reusable components in `presentation/components/`
-   (SalahCard, PrimaryButton, StreakBadge, etc.) using the theme colors, plus
-   the slow-fade/breathing-background motion described in Section 16.
-2. **Navigation polish** — add Onboarding, Prayer, Reflection, Quran, Settings
-   routes to `SalahGuardNavHost.kt`.
-3. **Real screens**, one at a time, in the order the doc specifies.
+---
 
-## A note on scope
+# 🚀 Current Progress
 
-This skeleton deliberately implements only one vertical slice (prayer
-tracking) all the way through every layer, rather than stubbing out every
-feature shallowly. That's intentional — it gives you one proven, working
-pattern to copy for Quran progress, reflections, streaks, etc., rather than
-ten half-finished ones.
+### ✅ Completed
+
+- Home Dashboard
+- Prayer Tracking
+- Prayer Notifications
+- Smart Alarm
+- Reflection Journal
+- Journey Tracking
+- Quran Learning
+- Protection Settings
+- Modern UI/UX
+- Dynamic Prayer Themes
+- Qibla Direction
+- Mosque Finder
+- Digital Tasbih
+
+### 💡 Planned
+
+- AI Reflection Insights
+- Widgets
+- Wear OS Support
+- Cloud Sync
+- Multi-language Support
+
+---
+
+# 🚀 Getting Started
+
+## Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/SalahGuard.git
+```
+
+## Open in Android Studio
+
+```
+File → Open → SalahGuard
+```
+
+## Sync Gradle
+
+Allow Android Studio to download all dependencies.
+
+---
+
+## Run
+
+- Android Studio Koala or newer
+- Android 8.0+
+- Min SDK 26
+
+---
+
+# 🎯 Design Philosophy
+
+SalahGuard was built around one belief:
+
+> **Prayer should feel peaceful, not pressured.**
+
+Every screen, animation, reminder, and interaction is designed to reduce friction and help users reconnect with Allah through hope, reflection, and consistency.
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, and feedback are always welcome.
+
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 📄 License
+
+This project is intended for educational and portfolio purposes.
+
+---
+
+<div align="center">
+
+## 🌙 SalahGuard
+
+### Hope over guilt.
+
+### Consistency through compassion.
+
+**Made with ❤️ to help Muslims build a peaceful relationship with Salah.**
+
+</div>
