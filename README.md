@@ -3,7 +3,7 @@
 # 🕌 SalahGuard
 
 <p align="center">
-   <img width="1254" height="1254" alt="salahguardlogo" src="https://github.com/user-attachments/assets/babe4994-5407-4a0c-8533-7e3b7ee915ed" />
+   <img width="120" height="120" alt="salahguardlogo" src="https://github.com/user-attachments/assets/babe4994-5407-4a0c-8533-7e3b7ee915ed" />
 
 </p>
 
@@ -122,6 +122,19 @@ Instead of overwhelming users with reminders, SalahGuard encourages mindful wors
 | IDE | Android Studio |
 
 ---
+# 📱 Screenshots
+
+<p align="center">
+   <img width="220"  alt="homepage" src="https://github.com/user-attachments/assets/367f3018-4875-456b-aece-1fb608c26106" />
+   <img width="220"  alt="journey" src="https://github.com/user-attachments/assets/c1b63cbe-e932-4c29-9020-51dc9c171bda" />
+   <img width="220"  alt="reflection" src="https://github.com/user-attachments/assets/afdb6444-57d5-4f27-b8ef-23703da198ed" />
+   <img width="220"  alt="qibla" src="https://github.com/user-attachments/assets/25368e75-7f60-4f10-bd41-18ec97b34348" />
+   <img width="220"  alt="notification" src="https://github.com/user-attachments/assets/58a9ad82-91aa-46dc-861f-882658f15b9b" />
+   <img width="220"  alt="alarm" src="https://github.com/user-attachments/assets/56c5fdc2-4188-4bd8-b515-2f4880e662e7" />
+   <img width="220"  alt="nearbymosque" src="https://github.com/user-attachments/assets/7f479055-604c-4dc9-b243-a6d6209e9ef6" />
+   <img width="220"  alt="dhikr" src="https://github.com/user-attachments/assets/04b3ae82-306b-4388-b047-672b5cfab6b7" />
+</p>
+
 
 # 🏗 Architecture
 
