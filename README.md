@@ -123,10 +123,10 @@ Instead of overwhelming users with reminders, SalahGuard encourages mindful wors
 
 ---
 
-# RoadMap
+# 🛣️ RoadMap
 
 <p align="center">
-<img width="240" alt="image" src="https://github.com/user-attachments/assets/f2484118-1b11-437b-8022-c5fd6ca8e65e" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/f2484118-1b11-437b-8022-c5fd6ca8e65e" />
 </p>
 
 ---
