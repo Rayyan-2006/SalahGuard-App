@@ -3,7 +3,8 @@
 # 🕌 SalahGuard
 
 <p align="center">
-  <img src="YOUR_LOGO_LINK" width="180" alt="SalahGuard Logo"/>
+   <img width="1254" height="1254" alt="salahguardlogo" src="https://github.com/user-attachments/assets/babe4994-5407-4a0c-8533-7e3b7ee915ed" />
+
 </p>
 
 ### *Hope over guilt. Consistency through compassion.*
